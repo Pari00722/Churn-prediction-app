@@ -1,7 +1,8 @@
 # 📊 Churn Prediction App
 A Streamlit web application that predicts customer churn based on input parameters like age, gender, tenure, and monthly charges. Built using a trained machine learning model with Scikit-learn.
 
-👉 **[Click here to view the live app](https://churn-prediction-app-yourusername.streamlit.app)**
+👉 **[Click here to view the live app](https://churn-prediction-app-001.streamlit.app/)**
+
 
 ## 🚀 Features
 - Predicts churn based on age, gender, tenure, and monthly charges
