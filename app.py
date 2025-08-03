@@ -7,8 +7,6 @@
 import streamlit as st
 import joblib
 import numpy as np
-import requests
-from streamlit_lottie import st_lottie
 
 # Load model and scaler
 scaler = joblib.load("scaler.pkl")
@@ -17,21 +15,15 @@ model = joblib.load("model.pkl")
 # Page configuration
 st.set_page_config(page_title="Churn Predictor", page_icon="📉", layout="centered")
 
-# Load Lottie animation
-@st.cache_data
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
-lottie_churn = load_lottieurl("https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json")
-
-# Custom CSS styling
+# Custom CSS styling with updated dark bluish purple background
 st.markdown("""
     <style>
+    body {
+        background-color: #4e148c;
+    }
     .main {
-        background-color: #f8f9fa;
+        background-color: #4e148c;
+        color: white;
         padding: 2rem;
         border-radius: 10px;
     }
@@ -51,9 +43,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# App Title with Animation
+# App Title
 st.markdown("<h1 style='text-align:center;'>📊 Churn Prediction App</h1>", unsafe_allow_html=True)
-st_lottie(lottie_churn, height=200, key="churn-animation")
 st.markdown("---")
 
 # Input Description
